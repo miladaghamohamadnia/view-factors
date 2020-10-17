@@ -49,23 +49,23 @@ class Body(ABC):
   """
   Abstract Vector of polygons representing a geometry body
   """
-  def __init__(self, points=[]):
-    self._pts = points
-    self.check_input(points)
-    self.n = len(points)
+  def __init__(self, polys=[]):
+    self._polys = polys
+    self.check_input(polys)
+    
   
-  def check_input(self, points):
-    if len(points)>0:
-      for p in points: 
-        if not isinstance(p, Point): 
-          raise ValueError("input must be a list of Point objects")
+  def check_input(self, polys):
+    if len(polys)>0:
+      for p in polys: 
+        if not isinstance(p, Poly): 
+          raise ValueError("input must be a list of Poly objects")
           return
 
   def __len__(self):
-    return len(self._pts)
+    return len(self._polys)
 
   def __repr__(self):
-    return "Polygon: " + " ".join(["\t"+str(e) for e in self._pts])
+    return "Mesh Body: " + " ".join(["\t"+str(e) for e in self._polys])
 
   def __str__(self):
     return self.__repr__()
@@ -144,20 +144,6 @@ class Factory_Primitives:
 
 
 if __name__ == "__main__":
-  import random
-  for el in range(100):
-    i = [random.randint(1,1000)]*3
-    C = Factory_Primitives.make_a_point(i)
-    print(C)
-
-  for el in range(100):
-    i1 = [random.randint(1,1000)]*3
-    i2 = [random.randint(1,1000)]*3
-    i3 = [random.randint(1,1000)]*3
-    C = Factory_Primitives.make_a_poly(
-      [Factory_Primitives.make_a_point(i1), 
-      Factory_Primitives.make_a_point(i2), 
-      Factory_Primitives.make_a_point(i3)])
-    print(C)
+ pass
 
 

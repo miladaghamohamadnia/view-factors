@@ -1,4 +1,4 @@
-from src.types import *
+from src.basics import *
 import random
 
 
@@ -6,7 +6,6 @@ def test_points():
   for el in range(100):
     i = [random.randint(1,1000)]*3
     C = Factory_Primitives.make_a_point(i)
-    print(C)
 
 def test_polygons():
   for el in range(100):
@@ -17,4 +16,4 @@ def test_polygons():
         [Factory_Primitives.make_a_point(i1), 
         Factory_Primitives.make_a_point(i2), 
         Factory_Primitives.make_a_point(i3)])
-    print(C)
+
