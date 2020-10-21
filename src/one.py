@@ -123,6 +123,7 @@ def DrawGLScene():
  
 def main():
  
+ 
         global window
         global GLUTwindow_height, GLUTwindow_width
         glutInit(sys.argv)
