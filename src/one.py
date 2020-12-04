@@ -26,7 +26,7 @@ needsPointerDisplayUpdate = True
 PointerDisplayList = -1
 
 import trimesh 
-# mesh = trimesh.load('C:\\Users\\Casti\\projects\\temporary\\Radiosity\\3Dscenes\\test.obj')
+mesh = trimesh.load('C:\\Users\\Casti\\projects\\temporary\\Radiosity\\3Dscenes\\test.obj')
 mesh = trimesh.load('C:\\Users\\Casti\\projects\\temporary\\form_factors\\models\\confetti_2k.obj')
 
 
@@ -95,7 +95,7 @@ def keyPressed(key, x, y):
         if key==b'z':
           Z_SHIFT += -5
         glutPostRedisplay()
- 
+
 
 
 
@@ -140,6 +140,5 @@ def main():
         renderPointerImage()
         glutMainLoop()
         
- 
 
 main() 
